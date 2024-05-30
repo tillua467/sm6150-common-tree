@@ -171,10 +171,6 @@ PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.1.vendor
 
-# Lineage Health
-PRODUCT_PACKAGES += \
-    vendor.lineage.health-service.default
-
 # Overlay
 PRODUCT_PACKAGES += \
     AOSPAXiaomiSM6150FrameworksOverlay \
