@@ -49,10 +49,19 @@ BOARD_SUPPORTS_SOUND_TRIGGER := true
 TARGET_BOOTLOADER_BOARD_NAME := sm6150
 TARGET_NO_BOOTLOADER := true
 
+# Car
+ifeq ($(TARGET_IS_AUTOMOTIVE), true)
+TARGET_USES_CAR_FUTURE_FEATURES := true
+endif
+
 # GPS
 LOC_HIDL_VERSION := 4.0
 
 # HIDL
+ifeq ($(TARGET_IS_AUTOMOTIVE), true)
+DEVICE_FRAMEWORK_MANIFEST_FILE += $(COMMON_PATH)/car/manifest.xml
+endif
+
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     $(COMMON_PATH)/configs/hidl/xiaomi_framework_compatibility_matrix.xml
 
