@@ -121,6 +121,10 @@ on boot
     # USB controller configuration
     setprop sys.usb.configfs 1
 
+on property:vendor.post_boot.parsed=1
+    # Disable native stats collection service
+    stop statsd
+
 on property:sys.boot_completed=1
     # Set allocstall_threshold to 0
     # Set swappiness to 100
